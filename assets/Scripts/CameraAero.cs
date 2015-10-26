@@ -35,25 +35,25 @@ public class CameraAero : MonoBehaviour {
 	void Update ()
 	{
 		if (Input.GetKey (KeyCode.W))
-			this.rigidbody.velocity = transform.TransformDirection (Vector3.forward * speed);
+			this.GetComponent<Rigidbody>().velocity = transform.TransformDirection (Vector3.forward * speed);
 		else if (Input.GetKey (KeyCode.S))
-			this.rigidbody.velocity = transform.TransformDirection (Vector3.back * speed);
+			this.GetComponent<Rigidbody>().velocity = transform.TransformDirection (Vector3.back * speed);
 		else if (Input.GetKey (KeyCode.A))
-			this.rigidbody.velocity = transform.TransformDirection (Vector3.left * speed);
+			this.GetComponent<Rigidbody>().velocity = transform.TransformDirection (Vector3.left * speed);
 		else if (Input.GetKey (KeyCode.D))
-			this.rigidbody.velocity = transform.TransformDirection (Vector3.right * speed);
+			this.GetComponent<Rigidbody>().velocity = transform.TransformDirection (Vector3.right * speed);
 		else if (Input.GetKey (KeyCode.Space))
-			this.rigidbody.velocity = transform.TransformDirection (Vector3.up * speed);
+			this.GetComponent<Rigidbody>().velocity = transform.TransformDirection (Vector3.up * speed);
 		else if (Input.GetKey (KeyCode.X))
-			this.rigidbody.velocity = transform.TransformDirection (Vector3.down * speed);
+			this.GetComponent<Rigidbody>().velocity = transform.TransformDirection (Vector3.down * speed);
 		else
-			this.rigidbody.velocity = Vector3.zero;
+			this.GetComponent<Rigidbody>().velocity = Vector3.zero;
 		
 		if (!Input.GetKey (KeyCode.Mouse1)) {
-			Screen.showCursor = true;
+			Cursor.visible = true;
 			return;
 		} else
-			Screen.showCursor = false;
+			Cursor.visible = false;
 
 
 		if (axes == RotationAxes.MouseXAndY)

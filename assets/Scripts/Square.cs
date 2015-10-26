@@ -16,17 +16,17 @@ public class Square : MonoBehaviour {
 	}
 
 	public void resetColor(){
-		gameObject.renderer.material.color = baseColor;
+		gameObject.GetComponent<Renderer>().material.color = baseColor;
 		activo = false;
 	}
 	
 	public void attack(){
-		gameObject.renderer.material.color = attackColor;
+		gameObject.GetComponent<Renderer>().material.color = attackColor;
 		activo = true;
 	}
 	
 	public void range(){
-		gameObject.renderer.material.color = rangeColor;
+		gameObject.GetComponent<Renderer>().material.color = rangeColor;
 		activo = true;
 	}
 	

@@ -182,33 +182,33 @@ public class Chess : MonoBehaviour {
 		for (int i = 2; i < 10; i++) {
 			if(i%2==0){
 				GameObject border = (GameObject)Instantiate(Border, new Vector3(1.45f,0,i), Quaternion.LookRotation(gameObject.transform.forward)) as GameObject;
-				border.renderer.material.mainTexture = blackTex;
+				border.GetComponent<Renderer>().material.mainTexture = blackTex;
 				border = (GameObject)Instantiate(Border, new Vector3(i,0,1.45f), Quaternion.LookRotation(Vector3.Cross(gameObject.transform.forward, gameObject.transform.up))) as GameObject;
-				border.renderer.material.mainTexture = blackTex;
+				border.GetComponent<Renderer>().material.mainTexture = blackTex;
 				border = (GameObject)Instantiate(Border, new Vector3(i,0,9.55f), Quaternion.LookRotation(Vector3.Cross(gameObject.transform.forward, gameObject.transform.up))) as GameObject;
-				border.renderer.material.mainTexture = whiteTex;
+				border.GetComponent<Renderer>().material.mainTexture = whiteTex;
 				border = (GameObject)Instantiate(Border, new Vector3(9.55f,0,i), Quaternion.LookRotation(gameObject.transform.forward)) as GameObject;
-				border.renderer.material.mainTexture = whiteTex;
+				border.GetComponent<Renderer>().material.mainTexture = whiteTex;
 			}else{
 				GameObject border = (GameObject)Instantiate(Border, new Vector3(1.45f,0,i), Quaternion.LookRotation(gameObject.transform.forward)) as GameObject;
-				border.renderer.material.mainTexture = whiteTex;
+				border.GetComponent<Renderer>().material.mainTexture = whiteTex;
 				border = (GameObject)Instantiate(Border, new Vector3(i,0,1.45f), Quaternion.LookRotation(Vector3.Cross(gameObject.transform.forward, gameObject.transform.up))) as GameObject;
-				border.renderer.material.mainTexture = whiteTex;
+				border.GetComponent<Renderer>().material.mainTexture = whiteTex;
 				border = (GameObject)Instantiate(Border, new Vector3(i,0,9.55f), Quaternion.LookRotation(Vector3.Cross(gameObject.transform.forward, gameObject.transform.up))) as GameObject;
-				border.renderer.material.mainTexture = blackTex;
+				border.GetComponent<Renderer>().material.mainTexture = blackTex;
 				border = (GameObject)Instantiate(Border, new Vector3(9.55f,0,i), Quaternion.LookRotation(gameObject.transform.forward)) as GameObject;
-				border.renderer.material.mainTexture = blackTex;
+				border.GetComponent<Renderer>().material.mainTexture = blackTex;
 			}
 		}
 		for (int i = 2; i < 10; i ++) {
 			for (int j = 2; j < 10; j ++) {
 				if((i+j)%2 == 0){
 					board[i,j].square = (GameObject)Instantiate(Square, new Vector3(i,0,j), Quaternion.LookRotation(gameObject.transform.forward)) as GameObject;
-					board[i,j].square.renderer.material.mainTexture = whiteTex;
+					board[i,j].square.GetComponent<Renderer>().material.mainTexture = whiteTex;
 
 				}else{
 					board[i,j].square = (GameObject)Instantiate(Square, new Vector3(i,0,j), Quaternion.LookRotation(gameObject.transform.forward)) as GameObject;
-					board[i,j].square.renderer.material.mainTexture = blackTex;
+					board[i,j].square.GetComponent<Renderer>().material.mainTexture = blackTex;
 				}
 
 				board[i,j].obj = (GameObject)Instantiate(piecePrefab, new Vector3(i,0.1f,j), Quaternion.LookRotation(gameObject.transform.forward)) as GameObject;
@@ -853,62 +853,62 @@ public class Chess : MonoBehaviour {
 
 		if(board[i,j].sideSquare == side.Black){
 			if(board[i,j].pieceSquare == piece.Bishop)
-				board[i,j].obj.renderer.material.mainTexture = BlackBishop;
+				board[i,j].obj.GetComponent<Renderer>().material.mainTexture = BlackBishop;
 			if(board[i,j].pieceSquare == piece.Queen)
-				board[i,j].obj.renderer.material.mainTexture = BlackQueen;
+				board[i,j].obj.GetComponent<Renderer>().material.mainTexture = BlackQueen;
 			if(board[i,j].pieceSquare == piece.King)
-				board[i,j].obj.renderer.material.mainTexture = BlackKing;
+				board[i,j].obj.GetComponent<Renderer>().material.mainTexture = BlackKing;
 			if(board[i,j].pieceSquare == piece.Knight)
-				board[i,j].obj.renderer.material.mainTexture = BlackKnight;
+				board[i,j].obj.GetComponent<Renderer>().material.mainTexture = BlackKnight;
 			if(board[i,j].pieceSquare == piece.Pawn)
-				board[i,j].obj.renderer.material.mainTexture = BlackPawn;
+				board[i,j].obj.GetComponent<Renderer>().material.mainTexture = BlackPawn;
 			if(board[i,j].pieceSquare == piece.Rook)
-				board[i,j].obj.renderer.material.mainTexture = BlackRook;
+				board[i,j].obj.GetComponent<Renderer>().material.mainTexture = BlackRook;
 		}
 		if(board[i,j].sideSquare == side.White){
 			if(board[i,j].pieceSquare == piece.Bishop)
-				board[i,j].obj.renderer.material.mainTexture = WhiteBishop;
+				board[i,j].obj.GetComponent<Renderer>().material.mainTexture = WhiteBishop;
 			if(board[i,j].pieceSquare == piece.Queen)
-				board[i,j].obj.renderer.material.mainTexture = WhiteQueen;
+				board[i,j].obj.GetComponent<Renderer>().material.mainTexture = WhiteQueen;
 			if(board[i,j].pieceSquare == piece.King)
-				board[i,j].obj.renderer.material.mainTexture = WhiteKing;
+				board[i,j].obj.GetComponent<Renderer>().material.mainTexture = WhiteKing;
 			if(board[i,j].pieceSquare == piece.Knight)
-				board[i,j].obj.renderer.material.mainTexture = WhiteKnight;
+				board[i,j].obj.GetComponent<Renderer>().material.mainTexture = WhiteKnight;
 			if(board[i,j].pieceSquare == piece.Pawn)
-				board[i,j].obj.renderer.material.mainTexture = WhitePawn;
+				board[i,j].obj.GetComponent<Renderer>().material.mainTexture = WhitePawn;
 			if(board[i,j].pieceSquare == piece.Rook)
-				board[i,j].obj.renderer.material.mainTexture = WhiteRook;
+				board[i,j].obj.GetComponent<Renderer>().material.mainTexture = WhiteRook;
 		}
 	}
 	
 	void paintPiece(int i, int j, piece p, side s){
 		if(s == side.Black){
 			if(p == piece.Bishop)
-				board[i,j].obj.renderer.material.mainTexture = BlackBishop;
+				board[i,j].obj.GetComponent<Renderer>().material.mainTexture = BlackBishop;
 			if(p == piece.Queen)
-				board[i,j].obj.renderer.material.mainTexture = BlackQueen;
+				board[i,j].obj.GetComponent<Renderer>().material.mainTexture = BlackQueen;
 			if(p == piece.King)
-				board[i,j].obj.renderer.material.mainTexture = BlackKing;
+				board[i,j].obj.GetComponent<Renderer>().material.mainTexture = BlackKing;
 			if(p == piece.Knight)
-				board[i,j].obj.renderer.material.mainTexture = BlackKnight;
+				board[i,j].obj.GetComponent<Renderer>().material.mainTexture = BlackKnight;
 			if(p == piece.Pawn)
-				board[i,j].obj.renderer.material.mainTexture = BlackPawn;
+				board[i,j].obj.GetComponent<Renderer>().material.mainTexture = BlackPawn;
 			if(p == piece.Rook)
-				board[i,j].obj.renderer.material.mainTexture = BlackRook;
+				board[i,j].obj.GetComponent<Renderer>().material.mainTexture = BlackRook;
 		}
 		if(s == side.White){
 			if(p == piece.Bishop)
-				board[i,j].obj.renderer.material.mainTexture = WhiteBishop;
+				board[i,j].obj.GetComponent<Renderer>().material.mainTexture = WhiteBishop;
 			if(p == piece.Queen)
-				board[i,j].obj.renderer.material.mainTexture = WhiteQueen;
+				board[i,j].obj.GetComponent<Renderer>().material.mainTexture = WhiteQueen;
 			if(p == piece.King)
-				board[i,j].obj.renderer.material.mainTexture = WhiteKing;
+				board[i,j].obj.GetComponent<Renderer>().material.mainTexture = WhiteKing;
 			if(p == piece.Knight)
-				board[i,j].obj.renderer.material.mainTexture = WhiteKnight;
+				board[i,j].obj.GetComponent<Renderer>().material.mainTexture = WhiteKnight;
 			if(p == piece.Pawn)
-				board[i,j].obj.renderer.material.mainTexture = WhitePawn;
+				board[i,j].obj.GetComponent<Renderer>().material.mainTexture = WhitePawn;
 			if(p == piece.Rook)
-				board[i,j].obj.renderer.material.mainTexture = WhiteRook;
+				board[i,j].obj.GetComponent<Renderer>().material.mainTexture = WhiteRook;
 		}
 	}
 	
@@ -948,9 +948,9 @@ public class Chess : MonoBehaviour {
 			return;
 
 		if(board [selectedI, selectedJ].sideSquare == side.White)
-			board [selectedI, selectedJ].obj.renderer.material.mainTexture = WhiteQueen;
+			board [selectedI, selectedJ].obj.GetComponent<Renderer>().material.mainTexture = WhiteQueen;
 		else
-			board [selectedI, selectedJ].obj.renderer.material.mainTexture = BlackQueen;
+			board [selectedI, selectedJ].obj.GetComponent<Renderer>().material.mainTexture = BlackQueen;
 		
 		board [selectedI, selectedJ].pieceSquare = piece.Queen;
 		
@@ -963,9 +963,9 @@ public class Chess : MonoBehaviour {
 			return;
 
 		if(board [selectedI, selectedJ].sideSquare == side.White)
-			board [selectedI, selectedJ].obj.renderer.material.mainTexture = WhiteKnight;
+			board [selectedI, selectedJ].obj.GetComponent<Renderer>().material.mainTexture = WhiteKnight;
 		else
-			board [selectedI, selectedJ].obj.renderer.material.mainTexture = BlackKnight;
+			board [selectedI, selectedJ].obj.GetComponent<Renderer>().material.mainTexture = BlackKnight;
 		
 		board [selectedI, selectedJ].pieceSquare = piece.Knight;
 		
